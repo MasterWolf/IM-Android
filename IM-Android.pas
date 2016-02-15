@@ -1,14 +1,28 @@
 {
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
+ *
+ *  _                       _           _ __  __ _             
+ * (_)                     (_)         | |  \/  (_)            
+ *  _ _ __ ___   __ _  __ _ _  ___ __ _| | \  / |_ _ __   ___  
+ * | | '_ ` _ \ / _` |/ _` | |/ __/ _` | | |\/| | | '_ \ / _ \ 
+ * | | | | | | | (_| | (_| | | (_| (_| | | |  | | | | | |  __/ 
+ * |_|_| |_| |_|\__,_|\__, |_|\___\__,_|_|_|  |_|_|_| |_|\___| 
+ *                     __/ |                                   
+ *                    |___/                                                                     
+ * 
+ * This program is a third party build by ImagicalMine.
+ * 
+ * ImagicalMine is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Author: PeratX
- * Genisys-Android Project
+ * @author PeratX, modified by the ImagicalMine Team
+ * @link http://imagicalmine.net
+ * 
+ *
 }
 
-Program Genisys_Android;
+Program IM_Android;
 
 {$mode objfpc}
 
@@ -20,7 +34,7 @@ Const
 
 Var 
 	HOME: string;
-	WORKSPACE: string = '/sdcard/Genisys/';
+	WORKSPACE: string = '/sdcard/IM/';
 
 Procedure testPerm;
 Var 
@@ -33,12 +47,12 @@ Begin
 	Except
 		on EInOutError Do
 		Begin
-			writeln('[ERROR] Unable to access '+HOME+'settings.conf : Permission denied !');
+			writeln('error> Unable to access '+HOME+'settings.conf : permission denied!');
 			halt;
 		End;
 		Else
 			Begin
-				writeln('[ERROR] Unable to access '+HOME+'settings.conf : Unknown error');
+				writeln('error> Unable to access '+HOME+'settings.conf : unknown error');
 				halt;
 			End;
 	End;
