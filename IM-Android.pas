@@ -110,7 +110,7 @@ Var t: text;
 Begin
 	assign(t,HOME+'settings.conf');
 	rewrite(t);
-	writeln(t,'/sdcard/Genisys/');
+	writeln(t,'/sdcard/IM');
 	close(t);
 End;
 
@@ -126,7 +126,7 @@ Begin
 	readln(t,WORKSPACE);
 	If Not fileExists(WORKSPACE) Then
 		Begin
-			throwError('Workspace not found, use /sdcard/Genisys/ as default');
+			throwError('Workspace not found, use /sdcard/IM/ as default');
 			writeDefaultWorkspace;
 			WORKSPACE := '/sdcard/Genisys/';
 		End;
@@ -211,33 +211,33 @@ Begin
 	execBusybox('clear');
 	textcolor(11);
 	//AQUA
-	writeln('Genisys Android '+PROG_VER);
+	writeln('system> ImagicalMine for Android '+PROG_VER);
 	textcolor(13);
 	//PURPLE
-	writeln('Powered by iTX Technologies');
+	writeln('system> Maintained the ImagicalMine Team');
 	writeln;
-	writeln('Home: '+HOME);
-	writeln('Workspace: '+WORKSPACE);
+	writeln('system> Home: '+HOME);
+	writeln('system> Workspace: '+WORKSPACE);
 	writeln;
 	textcolor(15);
 	//WHITE
-	writeln('a. Init Genisys Android from zips');
+	writeln('system> a. Init IM-Android from zip files');
 	//	writeln;
 	textcolor(6);
 	//YELLOW
-	writeln('[NOTICE] Put php.zip and Genisys.zip into '+WORKSPACE);
+	writeln('warning> Move php.zip and ImagicalMine.zip into '+WORKSPACE);
 	//	writeln;
 	textcolor(15);
-	writeln('b. Launch Genisys');
+	writeln('system> b. Launch ImagicalMine');
 	//	writeln;
-	writeln('c. Set workspace');
+	writeln('system> c. Set workspace');
 	//	writeln;
-	writeln('d. Edit php.ini');
-	writeln('[NOTICE] Please edit before launch Genisys');
+	writeln('system> d. Edit php.ini');
+	writeln('warning> Please edit before launch ImagicalMine');
 	//	writeln;
-	writeln('e. Rewrite php.ini');
+	writeln('system> e. Rewrite php.ini');
 	writeln;
-	writeln('i. About Genisys Android');
+	writeln('system> i. About IM-Android');
 	writeln;
 	write('Select: ');
 
@@ -245,7 +245,7 @@ Begin
 	If opt = 'a' Then
 		Begin
 			initRuntimeFromZip(WORKSPACE+'php.zip');
-			initCoreFromZip(WORKSPACE+'Genisys.zip');
+			initCoreFromZip(WORKSPACE+'ImagicalMine.zip');
 			writeln;
 			writeln('Done!');
 			writeln;
