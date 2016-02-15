@@ -29,7 +29,7 @@ Program IM_Android;
 Uses dos,sysutils;
 
 Const 
-	PROG_VER: string = 'v0.2.8 alpha';
+	PROG_VER: string = 'v0.9.17 alpha';
 	SHELL: string = '/system/bin/sh';
 
 Var 
@@ -313,14 +313,13 @@ Begin
 	Else If opt = 'i' Then
 		Begin
 			execBusybox('clear');
-			writeln('Genisys Android');
-			writeln('Version: '+PROG_VER);
-			writeln('Github repo: https://github.com/iTXTech/Genisys-Android');
+			writeln('system> ImagicalMine for Android');
+			writeln('system> Version: '+PROG_VER);
+			writeln('system> Please report all bugs to the issue tracker at https://github.com/ImagicalMine/IM-Android/issues.');
 			writeln;
-			writeln('This application itself is based on Terminal Emulator for Android by jackpal.');
-			writeln('This program is made by PeratX.');
-			writeln('Genisys is made by iTX Technologies.');
-			writeln('Genisys is a server software for Minecraft: Pocket Edition, which is based on the great project "PocketMine-MP".');
+			writeln('system> This application is based on Terminal Emulator for Android by jackpal.');
+			writeln('system> This program is made by PeratX, modified by the ImagicalMine team.');
+			writeln('system> ImagicalMine is a third-party build of PocketMine-MP by the ImagicalMine Team.);
 			pause;
 			main;
 			exit;
@@ -337,7 +336,7 @@ Begin
 		End
 	Else
 		Begin
-			throwError('Option not found !');
+			throwError('error> Option not found!');
 			main;
 			exit;
 		End;
