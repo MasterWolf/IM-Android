@@ -81,7 +81,7 @@ End;
 
 Procedure pause;
 Begin
-	write('Press enter to continue ...');
+	write('system> Press enter to continue.');
 	readln;
 End;
 
@@ -126,7 +126,7 @@ Begin
 	readln(t,WORKSPACE);
 	If Not fileExists(WORKSPACE) Then
 		Begin
-			throwError('Workspace not found, use /sdcard/IM/ as default');
+			throwError('error> Workspace not found, use /sdcard/IM/ as default');
 			writeDefaultWorkspace;
 			WORKSPACE := '/sdcard/Genisys/';
 		End;
@@ -257,15 +257,15 @@ Begin
 		Begin
 			If Not fileExists(HOME+'php') Then
 				Begin
-					throwError('Php runtime has not been installed !');
+					throwError('error> PHP runtime has not been installed!');
 					main;
 					exit;
 				End;
 			writeln;
-			writeln('[NOTICE] Now loading ...');
-			If fileExists(WORKSPACE+'Genisys.phar') Then execPhp(WORKSPACE, 'Genisys.phar')
+			writeln('system> Now loading ImagicalMine');
+			If fileExists(WORKSPACE+'ImagicalMine.phar') Then execPhp(WORKSPACE, 'ImagicalMine.phar')
 			Else If fileExists(WORKSPACE+'src/pocketmine/PocketMine.php') Then execPhp(WORKSPACE, 'src/pocketmine/PocketMine.php')
-			Else throwError('Genisys has not been installed !');
+			Else throwError('system> ImagicalMjne has not been installed!');
 			writeln;
 			pause;
 			main;
@@ -273,12 +273,12 @@ Begin
 		End
 	Else If opt = 'c' Then
 		Begin
-			write('Please enter the full path of workspace ['+WORKSPACE+'] ');
+			write('system> Please enter the full path of workspace ['+WORKSPACE+'] ');
 			readln(WORKSPACE);
 			If WORKSPACE = '' Then
 				Begin
 					writeln;
-					writeln('[INFO] Workspace has not changed');
+					writeln('system> Workspace has not changed!');
 					writeln;
 					pause;
 					main;
@@ -296,7 +296,7 @@ Begin
 			Else
 				Begin
 					saveWorkspace(WORKSPACE);
-					writeln('[INFO] Workspace has changed to '+WORKSPACE);
+					writeln('system> Workspace has changed to '+WORKSPACE);
 					writeln;
 					pause;
 					main;
@@ -321,11 +321,6 @@ Begin
 			writeln('This program is made by PeratX.');
 			writeln('Genisys is made by iTX Technologies.');
 			writeln('Genisys is a server software for Minecraft: Pocket Edition, which is based on the great project "PocketMine-MP".');
-			writeln;
-			writeln('Author: PeratX');
-			writeln('QQ: 1215714524');
-			writeln('E-mail: 1215714524@qq.com');
-			writeln;
 			pause;
 			main;
 			exit;
