@@ -7,7 +7,7 @@
 * Download IM-Android_vx.x.x.zip
 * Unzip
 * Move php.zip into /sdcard/IM
-* Download the latest phar from the Jenkins server
+* Download the latest phar from the Jenkins server (http://jenkins.imagicalmine.net:8080/)
 * Start IM-Android
 * Enter 'a' to install
 * After completed, enter 'b' to start.
